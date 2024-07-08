@@ -24,7 +24,7 @@
             >
           </li>
           <li>
-            <app-btn typeBtn="button" color="primary">Create</app-btn>
+            <app-btn typeBtn="button" color="sky">Create</app-btn>
           </li>
         </ul>
       </div>
@@ -60,9 +60,11 @@
 
 <!--Overlay login-->
 <ng-template 
-  cdk-connected-overlay 
-  [cdkConnectedOverlayOrigin]="menuOverlay" 
-  [cdkConnectedOverlayOpen]="isOpen()">
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="menuOverlay"
+  [cdkConnectedOverlayOpen]="isOpen()"
+  (overlayOutsideClick)="changeIsOpen('Login')"
+  >
   <div
   class="z-50 my-4 w-60 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
 >
